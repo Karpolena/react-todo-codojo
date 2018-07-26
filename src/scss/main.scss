@@ -6,6 +6,7 @@ $dark-grey: #7b7b7b;
 $light-grey: #dcdcdc;
 $blue: #77dcf5;
 $black: #2d2d2d;
+$white: #fff;
 $shadow-color: rgba(0, 0, 0, 0.253);
 * {
     margin: 0px;
@@ -15,6 +16,7 @@ $shadow-color: rgba(0, 0, 0, 0.253);
 body {
    font-family: $font;
    font-size: 1.5em; 
+   color: $white;
 }
 h1 {
     text-transform: uppercase;
@@ -31,6 +33,8 @@ h1 {
     background-color: $black;
     padding: 20px;
     text-align: center;
+    // display: flex;
+    position: relative;
 }
 .todo {
     padding: 30px;
@@ -41,12 +45,23 @@ h1 {
     align-items: center;
 }
 .delete {
-    align-self: flex-end;
-    
+    align-self: flex-end;    
 }
 button {
     border: none;
     background-color: transparent;
     color: #7b7b7b;
     margin: 0px 10px;
+}
+.stats {
+    position: absolute;
+    text-transform: uppercase;
+    top: 10px;
+}
+th {
+    color: $white;
+    font-weight: 400;
+    font-size: 0.65em;
+    letter-spacing: 0.1em;
+    padding: 5px;
 }

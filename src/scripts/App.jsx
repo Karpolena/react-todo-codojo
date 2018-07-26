@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Header from './components/Header';
 import Todo from './components/Todo';
 
+
 class App extends Component {
     constructor(props) {
         super(props);
@@ -21,10 +22,15 @@ class App extends Component {
         this.setState({ todos});
 
     }
+    handleDelete(id) {
+        let todos = this.state.todos.filter(todo => todo.id !== id);
+
+        this.setState({ todos });
+    }
     render(){
         return(
             <main className="main">
-            <Header title={this.props.title} className="header" />
+            <Header title={this.props.title} todos={this.state.todos} />
             <section className="todo-list main__item">
                 {this.state.todos.map(todo =>
                     <Todo 
@@ -32,7 +38,8 @@ class App extends Component {
                     id={todo.id}
                     title={todo.title} 
                     completed={todo.completed} 
-                    onStatusChange={this.handleStatusChange.bind(this)}/>)
+                    onStatusChange={this.handleStatusChange.bind(this)}
+                    onDelete={this.handleDelete.bind(this)}/>)
                 }
             </section>
         </main>
@@ -41,7 +48,7 @@ class App extends Component {
 }
 
  
-  
+
 
 
 
