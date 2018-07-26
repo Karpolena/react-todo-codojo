@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Header from './components/Header';
 import Todo from './components/Todo';
-
+import Form from './components/Form';
 
 class App extends Component {
     constructor(props) {
@@ -10,6 +10,11 @@ class App extends Component {
         this.state = {
             todos: this.props.initialData
         };
+    }
+
+    nextId() {
+        this._nextId = this._next || 4;
+        return this._nextId++;
     }
     handleStatusChange(id) {
         console.log('handleStatusChange',id);
@@ -22,6 +27,15 @@ class App extends Component {
         this.setState({ todos});
 
     }
+    handleAdd(title) {
+        let todo = {
+            id: this.nextId(),
+            title,
+            completed: false
+        }
+        let todos = [...this.state.todos, todo];
+        this.setState({todos});
+    }
     handleDelete(id) {
         let todos = this.state.todos.filter(todo => todo.id !== id);
 
@@ -31,7 +45,7 @@ class App extends Component {
         return(
             <main className="main">
             <Header title={this.props.title} todos={this.state.todos} />
-            <section className="todo-list main__item">
+            <section className="todo-list">
                 {this.state.todos.map(todo =>
                     <Todo 
                     key={todo.id} 
@@ -42,6 +56,7 @@ class App extends Component {
                     onDelete={this.handleDelete.bind(this)}/>)
                 }
             </section>
+            <Form onAdd={this.handleAdd.bind(this)}/>
         </main>
         );
     }

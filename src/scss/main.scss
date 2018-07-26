@@ -2,8 +2,9 @@
 
 $font: 'Roboto', sans-serif;
 
-$dark-grey: #7b7b7b;
-$light-grey: #dcdcdc;
+$dark-grey: #918f8f;
+$ultra-light-grey: #e4e1e1;
+$light-grey: #c0bebe;
 $blue: #77dcf5;
 $black: #2d2d2d;
 $white: #fff;
@@ -27,7 +28,7 @@ h1 {
 .main {
     width: 70%;
     margin: 100px auto;
-    box-shadow: 0px 2px 5px 0px $shadow-color; 
+    box-shadow: 0px 2px 5px 0px $shadow-color;
 }
 .header {
     background-color: $black;
@@ -38,11 +39,11 @@ h1 {
 }
 .todo {
     padding: 30px;
-    border-bottom: 1px solid $light-grey;
+    border-bottom: 1px solid $ultra-light-grey;
     color: $dark-grey;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    // display: flex;
+    // justify-content: flex-start;
+    // align-items: center;
 }
 .delete {
     align-self: flex-end;    
@@ -50,13 +51,14 @@ h1 {
 button {
     border: none;
     background-color: transparent;
-    color: #7b7b7b;
+    color: $dark-grey;
     margin: 0px 10px;
 }
 .stats {
     position: absolute;
     text-transform: uppercase;
     top: 10px;
+    font-size: 0.9em;
 }
 th {
     color: $white;
@@ -64,4 +66,41 @@ th {
     font-size: 0.65em;
     letter-spacing: 0.1em;
     padding: 5px;
+}
+input {
+    width: 80%;
+    height: 50px;
+    margin: 10px;
+    border: 1px solid $ultra-light-grey;
+    font-size: 0.9em;
+    padding: 10px;
+    color: $blue;
+}
+input::-webkit-input-placeholder {
+    color: $light-grey;  
+}
+input::-moz-placeholder {
+    color: $light-grey; 
+}
+button {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    float: right;
+}
+.checkbox {
+    float: left;
+}
+form button{
+    width: 16%;
+}
+form {
+    display: flex;
+}
+.completed {
+    color: $light-grey; 
+    text-decoration: line-through;
+}
+.material-icons {
+    color: $dark-grey;
+    font-size: 2em;
 }
