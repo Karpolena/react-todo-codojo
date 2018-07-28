@@ -41,6 +41,16 @@ class App extends Component {
 
         this.setState({ todos });
     }
+
+    handleEdit(id, title) {
+        let todos = this.state.todos.map(todo => {
+            if (todo.id === id) {
+                todo.title = title;                
+            }
+            return todo;
+        });
+        this.setState({ todos });
+    }
     render(){
         return(
             <main className="main">
@@ -53,7 +63,10 @@ class App extends Component {
                     title={todo.title} 
                     completed={todo.completed} 
                     onStatusChange={this.handleStatusChange.bind(this)}
-                    onDelete={this.handleDelete.bind(this)}/>)
+                    onDelete={this.handleDelete.bind(this)}
+                    onEdit={this.handleEdit.bind(this)}
+                    />)
+                    
                 }
             </section>
             <Form onAdd={this.handleAdd.bind(this)}/>
