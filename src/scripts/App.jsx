@@ -10,10 +10,19 @@ class App extends Component {
         this.state = {
             todos: this.props.initialData
         };
+
+    }
+    componentWillMount() {
+
+    }
+
+    componentDidMount() {
+        
     }
 
     nextId() {
-        this._nextId = this._next || 4;
+        // this._nextId = this._next || 4;
+         this._nextId = JSON.stringify(Math.random() * (100000 - 100) + 100);
         return this._nextId++;
     }
     handleStatusChange(id) {

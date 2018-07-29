@@ -34,16 +34,14 @@ h1 {
     background-color: $black;
     padding: 20px;
     text-align: center;
-    // display: flex;
-    position: relative;
+    display: flex;
+    justify-content: space-between;
+    // position: relative;
 }
 .todo {
     padding: 30px;
     border-bottom: 1px solid $ultra-light-grey;
     color: $dark-grey;
-    // display: flex;
-    // justify-content: flex-start;
-    // align-items: center;
 }
 .delete, .edit {
     opacity: 0;
@@ -60,9 +58,13 @@ button {
     background-color: transparent;
     color: $dark-grey;
     margin: 0px 10px;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    float: right;
 }
 .stats {
-    position: absolute;
+    width: 15%;
+    // position: absolute;
     text-transform: uppercase;
     top: 10px;
     font-size: 0.9em;
@@ -89,18 +91,12 @@ input::-webkit-input-placeholder {
 input::-moz-placeholder {
     color: $light-grey; 
 }
-button {
-    font-size: 0.8em;
-    text-transform: uppercase;
-    float: right;
-}
+
 .checkbox {
     float: left;
     opacity: 0.5;
 }
-form button{
-    width: 10%;
-}
+
 form {
     display: flex;
 }
@@ -112,4 +108,29 @@ form {
     color: $dark-grey;
     font-size: 2em;
 }
+
+.stopwatch button {
+    width: 1.7em;
+    height: 1.7em; 
+}
+.stopwatch .icon {
+    background-size: 1.7em;
+    color: $white;
+    float: none;
+}
+.pause {
+    background-image: url(./../static/img/baseline-pause-24px.svg);
+}
+.play-arrow {
+    background-image: url(./../static/img/baseline-play_arrow-24px.svg);;
+}
+.stop {
+    background-image: url(./../static/img/baseline-stop-24px.svg);
+}
+
+
+
+
+
+
 
